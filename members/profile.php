@@ -19,13 +19,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>ประวัติส่วนตัว</title>
     <style>
         .img-profile{
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             margin: 0 auto;
             display: block;
         }
@@ -82,8 +84,8 @@
         © Copyright 2022 <h6>ระบบสแกนหวย พัฒนาโดย<a href="https://amblotto.cc/"> Amblotto</a></h6>
     </footer>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

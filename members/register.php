@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>สมัครสมาชิก</title>
 </head>
 <body>
@@ -74,12 +77,13 @@
         </div>
     </div>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
         //formregister
         $( document ).ready(function(){
             $('#formRegister').validate({

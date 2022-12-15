@@ -4,7 +4,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare('SELECT * FROM members WHERE username = ?');
+    $stmt = $conn->prepare("SELECT * FROM members WHERE username = ?");
     $stmt->bind_param('s', $username); // s - string, b - blob, i - int
     $stmt->execute();
     $result = $stmt->get_result();
@@ -17,11 +17,14 @@
             $_SESSION['name'] = $row['name'];  // $_SESSION = ดึงค่าข้อมูลผู้ใช้ไปหน้าอื่น
             $_SESSION['image'] = $row['image'];
 
-            header('location: ../index.php');
+            header('location:../index.php');
+            // echo '<script type="text/javascript">';
+            // echo 'alertSuccess("เข้าสู่ระบบ", "index.php")';
+            // echo '</script>';
 
-        } else {
+        } else {         
             echo '<script> alert("รหัสผ่านไม่ถูกต้อง!!"); </script>';
-        header('Refresh:0; url=../login.php'); // Refresh:0; url= - ใช้เพื่อขั้นระหว่างกลาง
+            header('Refresh:0; url=../login.php'); // Refresh:0; url= - ใช้เพื่อขั้นระหว่างกลาง
         }
 
     } else {
@@ -30,7 +33,7 @@
     }
 
     } else {
-        header('location: ../index.php'); 
+        header('location:../index.php'); 
     }
 
 

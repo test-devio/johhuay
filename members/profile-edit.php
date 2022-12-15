@@ -19,8 +19,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>ประวัติส่วนตัว</title>
     <style>
         .img-profile{
@@ -48,9 +50,9 @@
     <section class="container my-3">
         <div class="row">
             <div class="col-12 profile-top">
-                <img src="assets/images/<?php $_SESSION['image']; ?>" class="img-profile rounded-circle img-thumbnail" alt="Image Profile">
+                <img src="assets/images/<?php echo $row['image'];?>" class="img-profile rounded-circle img-thumbnail" alt="Image Profile">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn mx-auto my-3 d-block btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn mx-auto d-block my-3 btn-primary" data-toggle="modal" data-target="#exampleModal">
                 เปลี่ยนรูปภาพ
                 </button>
 
@@ -96,7 +98,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="email">อีเมล์</label>
-                                    <input type="email" class="form-control" id="email" name="email" value="A<?php echo $row['email']; ?>">
+                                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $row['email']; ?>">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="phone">เบอร์โทรศัพท์</label>
@@ -104,7 +106,7 @@
                                 </div>
                             </div>
 
-                            <a href="profile.php" class="btn btn-secondary float-left">
+                            <a href="profile.php" class="btn btn-warning float-left">
                                 ย้อนกลับ
                             </a>
                             <input type="submit" name="submit" class="btn btn-primary float-right" value="บันทึกข้อมูล">
@@ -119,10 +121,10 @@
         © Copyright 2022 <h6>ระบบสแกนหวย พัฒนาโดย<a href="https://amblotto.cc/"> Amblotto</a></h6>
     </footer>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
 
     <script>
         $( document ).ready(function(){

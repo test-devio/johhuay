@@ -19,13 +19,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>เปลี่ยนรหัสผ่าน</title>
     <style>
         .img-profile{
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             margin: 0 auto;
             display: block;
         }
@@ -38,6 +40,7 @@
 </head>
 <body>
     <?php include_once('includes/navbar.php') ?>
+    
     <section class="jumbotron jumbotron-fluid">
         <div class="container my-5 my-sm-1">
             <h1 class="text-center">เปลี่ยนรหัสผ่าน</h1>
@@ -52,7 +55,6 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="php/changePassword.php" method="post" id="formPassword">
-
                             <div class="form-group col-md-12">
                                 <label for="oldpassword">รหัสผ่านเดิม</label>
                                 <input type="password" class="form-control" name="oldpassword" id="oldpassword">
@@ -79,59 +81,58 @@
         © Copyright 2022 <h6>ระบบสแกนหวย พัฒนาโดย<a href="https://amblotto.cc/"> Amblotto</a></h6>
     </footer>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
 
     <script>
 
         $( document ).ready(function(){
-        $('#formPassword').validate({
-            rules:{
-                oldpassword: {
-                    required: true,
-                    minlength: 4
+            $('#formPassword').validate({
+                rules:{
+                    oldpassword: {
+                        required: true,
+                        minlength: 4
+                    },
+                    password: {
+                        required: true,
+                        minlength: 4
+                    },
+                    repassword: {
+                        required: true,
+                        minlength: 4,
+                        equalTo: '#password'
+                    }
                 },
-                password: {
-                    required: true,
-                    minlength: 4
+                messages:{
+                    oldpassword: {
+                        required: 'โปรดกรอกข้อมูล รหัสผ่าน',
+                        minlength: 'โปรดกรอกข้อมูล ไม่น้อยกว่า 4 ตัวอักษร'
+                    },
+                    password: {
+                        required: 'โปรดกรอกข้อมูล รหัสผ่าน',
+                        minlength: 'โปรดกรอกข้อมูล ไม่น้อยกว่า 4 ตัวอักษร'
+                    },
+                   repassword: {
+                        required: 'โปรดกรอกข้อมูล รหัสผ่าน',
+                        minlength: 'โปรดกรอกข้อมูล ไม่น้อยกว่า 4 ตัวอักษร',
+                        equalTo: 'โปรดกรอกข้อมูลรหัสผ่านให้ตรงกัน'
+                    }
                 },
-                repassword: {
-                    required: true,
-                    minlength: 4,
-                    equalTo: '#password'
+                errorElement: 'div',
+                errorPlacement: function ( error, element ){
+                    error.addClass( 'invalid-feedback' )
+                    error.insertAfter( element )
+                },
+                highlight: function( element, errorClass, validClass ){
+                    $( element ).addClass( 'is-invalid' ).removeClass( 'is-valid' )
+                },
+                unhighlight: function ( element, errorClass, validClas ){
+                    $( element ).addClass( 'is-valid' ).removeClass( 'is-invalid' )
                 }
-            },
-            messages:{
-                oldpassword: {
-                    required: 'โปรดกรอกข้อมูล รหัสผ่าน',
-                    minlength: 'โปรดกรอกข้อมูล ไม่น้อยกว่า 4 ตัวอักษร'
-                },
-                password: {
-                    required: 'โปรดกรอกข้อมูล รหัสผ่าน',
-                    minlength: 'โปรดกรอกข้อมูล ไม่น้อยกว่า 4 ตัวอักษร'
-                },
-                repassword: {
-                    required: 'โปรดกรอกข้อมูล รหัสผ่าน',
-                    minlength: 'โปรดกรอกข้อมูล ไม่น้อยกว่า 4 ตัวอักษร',
-                    equalTo: 'โปรดกรอกข้อมูลรหัสผ่านให้ตรงกัน'
-                }
-            },
-            errorElement: 'div',
-            errorPlacement: function ( error, element ){
-                error.addClass( 'invalid-feedback' )
-                error.insertAfter( element )
-            },
-            highlight: function( element, errorClass, validClass ){
-                $( element ).addClass( 'is-invalid' ).removeClass( 'is-valid' )
-            },
-            unhighlight: function ( element, errorClass, validClas ){
-                $( element ).addClass( 'is-valid' ).removeClass( 'is-invalid' )
-            }
-        });
-    })
-
+            });
+        })
     </script>
 
 </body>

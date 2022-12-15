@@ -21,28 +21,28 @@
                 $result = $conn->query($sql_create) or die($conn->error);
                 if ($result) {
                     echo "<script> alert('สมัครสมาชิกสำเร็จ'); </script>";
-                    header('Refresh:0; url=../index.php');
+                    redirect('index');
                 } else {
                     echo "<script> alert('สมัครสมาชิกไม่สำเร็จ โปรดติดต่อผู้ดูแลระบบ'); </script>";
-                    redirectRegister();
+                    redirect('register');
 
                 }
 
          } else {
             echo '<script> alert("ชื่อผู้ใช้นี้ถูกใช้ไปแล้ว \nโปรดกรอกข้อมูลใหม่อีกครั้ง"); </script>';
-            redirectRegister();
+            redirect('register');
          }
         } else {
             echo "<script> alert('Verification Failed!'); </script>";
-            redirectRegister();
+            redirect('register');
         }
 
     } else {
-        redirectRegister();
+        redirect('register');
     }
 
-    function redirectRegister () {
-        header('Refresh:0; url=../register.php');
+    function redirect ($path) {
+        header('Refresh:0; url=../'.$path.'.php');
     }
 
 ?>
